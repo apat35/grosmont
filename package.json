@@ -1,0 +1,22 @@
+{
+  "name": "grosmont",
+  "version": "1.0.0",
+  "description": "Grosmont backend application",
+  "main": "app.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apat35/grosmont.git"
+  },
+  "author": "apat35",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apat35/grosmont/issues"
+  },
+  "homepage": "https://github.com/apat35/grosmont#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
