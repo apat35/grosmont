@@ -1,0 +1,39 @@
+name: node-gs-stage
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+
+jobs:
+  build:
+    name: build
+    env:    
+      JOBENV: build
+      
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [14.17.0]
+        
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm install
+    - run: npm test
+
+    
+  e2-promote:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: echo "deploying code to staging environment"
+    - run: echo "**e2-deploy execution status:success"
