@@ -66,3 +66,11 @@ jobs:
     - uses: actions/checkout@master
     - run: echo "promoting code to Production environment"
     - run: echo "**e3-promote execution status:success"
+
+  depoly-to-stage:
+    name: Promote to Production
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: echo "promosting code to Production environment"
+    - run: echo "**e3-promote execution status:success"
